@@ -287,7 +287,7 @@ style.innerHTML = `
   .card {
     width: 100%;
     max-width: 620px;
-    background: rgba(255, 255, 255, 0.92);
+      background: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.06);
     border-radius: 28px;
     padding: 28px;
@@ -469,5 +469,31 @@ style.innerHTML = `
       border-radius: 18px;
     }
   }
+
+  h1,
+  h2,
+  h3 {
+    color: #181818 !important;
+    -webkit-text-fill-color: #181818 !important;
+    opacity: 1 !important;
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    text-shadow: none !important;
+  }
+
+  p,
+  .progress-text,
+  label {
+    color: #181818 !important;
+    -webkit-text-fill-color: #181818 !important;
+    opacity: 1 !important;
+  }
+
+  :root {
+    color-scheme: light;
+  }
 `;
+
+
 document.head.appendChild(style);
