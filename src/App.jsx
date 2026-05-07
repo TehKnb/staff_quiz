@@ -218,7 +218,7 @@ function ResultView({ resultRole, onRestart }) {
         </label>
 
         <button className="primary-button" type="submit">Надіслати</button>
-        {sent && <div className="success-message">Дякуємо! Заявку збережено в консолі.</div>}
+        {sent && <div className="success-message">Дякуємо! Вашу заявку прийнято!</div>}
       </form>
 
       <button className="secondary-button" onClick={onRestart}>Пройти ще раз</button>
