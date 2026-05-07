@@ -158,20 +158,36 @@ function ResultView({ resultRole, onRestart }) {
   const [phone, setPhone] = useState("");
   const [sent, setSent] = useState(false);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = async (event) => {
+  event.preventDefault();
 
-    const lead = {
-      name,
-      position: selectedRole,
-      phone,
-      quizResult: resultRole,
-      createdAt: new Date().toISOString(),
-    };
-
-    console.log("Lead:", lead);
-    setSent(true);
+  const lead = {
+    name,
+    position: selectedRole,
+    phone,
+    quizResult: resultRole,
+    createdAt: new Date().toISOString(),
   };
+
+  try {
+    const response = await fetch('/api/keycrm-lead', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(lead)
+    });
+
+    if (!response.ok) {
+      throw new Error('Помилка відправки заявки');
+    }
+
+    setSent(true);
+  } catch (error) {
+    console.error(error);
+    alert('Не вдалося відправити заявку. Спробуйте ще раз.');
+  }
+};
 
   return (
     <section className="card result-card">
