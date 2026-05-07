@@ -8,7 +8,7 @@ const roles = [
   "Спеціаліст з технічної підтримки",
 ];
 
-const startImage = "https://i.ibb.co/DffWv8BM/image.png";
+const startImage = "https://i.ibb.co/Cs1h5hkd/1.png";
 
 const results = {
   "Таргетолог": {
