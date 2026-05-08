@@ -8,7 +8,10 @@ const roles = [
   "Спеціаліст з технічної підтримки",
 ];
 
+
 const startImage = "https://i.ibb.co/Cs1h5hkd/1.png";
+const desktopBg = "https://i.ibb.co/yFJyQjjn/image.png";
+const mobileBg = "https://i.ibb.co/KxwNvdpx/image.png";
 
 const results = {
   "Таргетолог": {
@@ -285,19 +288,22 @@ style.innerHTML = `
   body {
     margin: 0;
     font-family: Inter, Arial, sans-serif;
-    background: #f4f1ec;
     color: #181818;
-  }
+    min-height: 100vh;
 
+    background-image: url("${desktopBg}");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
   .app {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 24px;
-    background:
-      radial-gradient(circle at top left, rgba(201, 167, 108, 0.35), transparent 34%),
-      linear-gradient(135deg, #fbf7ef 0%, #efe7dc 100%);
+    background: transparent;
   }
 
   .card {
@@ -469,6 +475,14 @@ style.innerHTML = `
   }
 
   @media (max-width: 520px) {
+    body {
+      background-image: url("${mobileBg}");
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+    }
+
     .app {
       padding: 14px;
       align-items: flex-start;
