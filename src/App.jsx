@@ -295,7 +295,7 @@ style.innerHTML = `
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll;
   }
   .app {
     min-height: 100vh;
