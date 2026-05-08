@@ -448,7 +448,8 @@ body::before {
     margin-top: 28px;
     padding: 20px;
     border-radius: 22px;
-    background: #f7f1e8;
+    background: #ffffff;
+    border: 2px solid #000;
     text-align: left;
   }
 
