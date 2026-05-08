@@ -285,18 +285,28 @@ style.innerHTML = `
     box-sizing: border-box;
   }
 
-  body {
-    margin: 0;
-    font-family: Inter, Arial, sans-serif;
-    color: #181818;
-    min-height: 100vh;
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  color: #181818;
+  min-height: 100vh;
+  background: #fff;
+  overflow-x: hidden;
+}
 
-    background-image: url("${desktopBg}");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-  }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background-image: url("${desktopBg}");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transform: translateZ(0);
+}
   .app {
     min-height: 100vh;
     display: flex;
@@ -312,7 +322,7 @@ style.innerHTML = `
     width: 100%;
     max-width: 620px;
       background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    border: 2px solid #000;
     border-radius: 28px;
     padding: 28px;
     box-shadow: 0 24px 70px rgba(35, 29, 20, 0.14);
@@ -420,13 +430,14 @@ style.innerHTML = `
   text-align: left;
   font-size: 16px;
   line-height: 1.35;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 2px solid #000;
   transition: 0.2s ease;
 }
 
   .answer-button:hover {
     background: #c1121f;
     color: #fff;
+    border-color: #000;
     transform: translateY(-1px);
   }
 
@@ -478,12 +489,11 @@ style.innerHTML = `
   }
 
   @media (max-width: 520px) {
-    body {
+    body::before {
       background-image: url("${mobileBg}");
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
-      background-attachment: scroll;
     }
 
     .card {
