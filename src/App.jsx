@@ -300,13 +300,15 @@ style.innerHTML = `
   .app {
     min-height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding: 24px;
+    padding: 40px 24px;
     background: transparent;
   }
 
   .card {
+    position: sticky;
+    top: 24px;
+
     width: 100%;
     max-width: 620px;
       background: #ffffff;
@@ -399,7 +401,7 @@ style.innerHTML = `
 
   .progress-line div {
     height: 100%;
-    background: #181818;
+    background: #c1121f;
     border-radius: 999px;
     transition: width 0.25s ease;
   }
@@ -409,20 +411,21 @@ style.innerHTML = `
     gap: 12px;
   }
 
-  .answer-button {
-    width: 100%;
-    padding: 17px 18px;
-    border-radius: 18px;
-    background: #f5efe6;
-    color: #181818;
-    text-align: left;
-    font-size: 16px;
-    line-height: 1.35;
-    border: 1px solid rgba(0, 0, 0, 0.06);
-  }
+.answer-button {
+  width: 100%;
+  padding: 17px 18px;
+  border-radius: 18px;
+  background: #ffffff;
+  color: #181818;
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.35;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: 0.2s ease;
+}
 
   .answer-button:hover {
-    background: #181818;
+    background: #c1121f;
     color: #fff;
     transform: translateY(-1px);
   }
@@ -481,6 +484,11 @@ style.innerHTML = `
       background-position: center top;
       background-repeat: no-repeat;
       background-attachment: scroll;
+    }
+
+    .card {
+      position: relative;
+      top: unset;
     }
 
     .app {
