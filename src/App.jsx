@@ -285,7 +285,7 @@ style.innerHTML = `
     box-sizing: border-box;
   }
 
-body {
+  body {
   margin: 0;
   font-family: Inter, Arial, sans-serif;
   color: #181818;
@@ -298,16 +298,19 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
 
   background-image: url("${desktopBg}");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  transform: translateZ(0);
+  pointer-events: none;
 }
   .app {
+    position: relative;
+    z-index: 1;
+
     min-height: 100vh;
     display: flex;
     justify-content: center;
